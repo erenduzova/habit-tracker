@@ -52,10 +52,10 @@ PUT_PIXEL_PARAMS = {
 
 # Endpoints
 pixela_endpoint = "https://pixe.la/v1/users"
-graphs_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs"
-post_pixel_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_PARAMS['id']}"
-put_pixel_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_PARAMS['id']}/{UPDATE_DAY}"
-del_pixel_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_PARAMS['id']}/{DELETE_DAY}"
+graphs_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
+post_pixel_endpoint = f"{graphs_endpoint}/{GRAPH_PARAMS['id']}"
+put_pixel_endpoint = f"{graphs_endpoint}/{GRAPH_PARAMS['id']}/{UPDATE_DAY}"
+del_pixel_endpoint = f"{graphs_endpoint}/{GRAPH_PARAMS['id']}/{DELETE_DAY}"
 
 # # Post User
 # response_user = requests.post(url=pixela_endpoint, json=USER_PARAMS)
@@ -73,6 +73,6 @@ del_pixel_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_PARAMS[
 # response_up_px = requests.put(url=put_pixel_endpoint, json=PUT_PIXEL_PARAMS, headers=headers)
 # print(response_up_px.text)
 
-# Delete Pixel
-response_del_px = requests.delete(url=del_pixel_endpoint, headers=headers)
-print(response_del_px.text)
+# # Delete Pixel
+# response_del_px = requests.delete(url=del_pixel_endpoint, headers=headers)
+# print(response_del_px.text)
