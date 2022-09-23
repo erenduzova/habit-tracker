@@ -35,11 +35,11 @@ Uncomment which request you want to use, run the code and comment out requests a
 # # Post User
 # response_user = requests.post(url=pixela_endpoint, json=USER_PARAMS)
 # print(response_user.text)
-#
+
 # # Post Graph
 # response_gr = requests.post(url=graphs_endpoint, json=GRAPH_PARAMS, headers=headers)
 # print(response_gr.text)
-#
+
 # # Post Pixel
 # response_px = requests.post(url=post_pixel_endpoint, json=POST_PIXEL_PARAMS, headers=headers)
 # print(response_px.text)
@@ -54,5 +54,5 @@ Uncomment which request you want to use, run the code and comment out requests a
 ```
 
 ## Accessing Graphs
-Go to this url: "https://pixe.la/v1/users/<username>/graphs/<graph-id>.html" <br />
+Go to this url: "https://pixe.la/v1/users/{username}/graphs/{graph-id}.html" <br />
 Change username and graph-id with yours.
