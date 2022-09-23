@@ -14,6 +14,9 @@ TODAY = date.today()
 # Change year, month, day to date you want to update
 UPDATE_DAY = datetime(year=2022, month=9, day=23).strftime("%Y%m%d")
 
+# Change year, month, day to date you want to delete
+DELETE_DAY = datetime(year=2022, month=9, day=23).strftime("%Y%m%d")
+
 headers = {
     "X-USER-TOKEN": TOKEN
 }
@@ -44,7 +47,7 @@ POST_PIXEL_PARAMS = {
 
 # Put Pixel Parameters
 PUT_PIXEL_PARAMS = {
-    "quantity": "1.8" # Add 1 glass more and update
+    "quantity": "1.8"  # Add 1 glass more and update
 }
 
 # Endpoints
@@ -52,6 +55,7 @@ pixela_endpoint = "https://pixe.la/v1/users"
 graphs_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs"
 post_pixel_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_PARAMS['id']}"
 put_pixel_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_PARAMS['id']}/{UPDATE_DAY}"
+del_pixel_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_PARAMS['id']}/{DELETE_DAY}"
 
 # # Post User
 # response_user = requests.post(url=pixela_endpoint, json=USER_PARAMS)
@@ -65,6 +69,10 @@ put_pixel_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_PARAMS[
 # response_px = requests.post(url=post_pixel_endpoint, json=POST_PIXEL_PARAMS, headers=headers)
 # print(response_px.text)
 
-# Update Pixel
-response_up_px = requests.put(url=put_pixel_endpoint, json=PUT_PIXEL_PARAMS, headers=headers)
-print(response_up_px.text)
+# # Update Pixel
+# response_up_px = requests.put(url=put_pixel_endpoint, json=PUT_PIXEL_PARAMS, headers=headers)
+# print(response_up_px.text)
+
+# Delete Pixel
+response_del_px = requests.delete(url=del_pixel_endpoint, headers=headers)
+print(response_del_px.text)
