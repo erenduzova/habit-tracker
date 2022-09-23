@@ -25,7 +25,8 @@ GRAPH_PARAMS = {
     "name": "Drinking Water Graph",
     "unit": "L",
     "type": "float",
-    "color": "sora"
+    "color": "sora",
+    "timezone": "Turkey"
 }
 
 # Endpoints
